@@ -8,7 +8,7 @@ void print_string(unsigned char *c)
 {
 	int i = 0;
 
-	while(c[i])
+	while (c[i])
 	_putchar(c[i++]);
 }
 /**
@@ -29,14 +29,14 @@ int _printf(const char *format, ...)
 			switch (format[i + 1])
 			{
 				case 'c':
-					_putchar(va_arg(ptr,int));
-					i++;
+				_putchar(va_arg(ptr, int));
+				i++;
 				break;
 				case 's':
 					print_string(va_arg(ptr, unsigned char *));
 					i++;
 				break;
-				default : ;
+				default;
 			}
 		}
 		else
