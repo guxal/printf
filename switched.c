@@ -4,13 +4,13 @@
 *switched - check all switch cases
 *@ptr: pointer given
 *@format: the arguments list
+*@c: char
+*@s: unsigned char
 *Return: the byte number
 */
-int switched(va_list ptr, const char *format)
+int switched(va_list ptr, const char *format, char c, unsigned char *s)
 {
 	int i = 0, byte = 0;
-	char c;
-	unsigned char *s;
 
 	while (format[i])
 	{
@@ -22,8 +22,7 @@ int switched(va_list ptr, const char *format)
 			{
 				case 'c':
 				c = va_arg(ptr, int);
-				if (c)
-					_putchar(c);
+				_putchar(c);
 				i++;
 				break;
 				case 's':
@@ -32,12 +31,14 @@ int switched(va_list ptr, const char *format)
 					byte += print_string(s);
 				else
 					byte += print_string((unsigned char *)"(null)");
-				byte--;
-				i++;
+				byte--, i++;
 				break;
 				case '%':
 					_putchar('%');
 					i++;
+				break;
+				case '\0':
+					byte--;
 				break;
 				default:
 					_putchar('%');
@@ -46,8 +47,7 @@ int switched(va_list ptr, const char *format)
 		}
 		else
 			_putchar(format[i]);
-		i++;
-		byte++;
+		i++, byte++;
 	}
 	return (byte);
 }

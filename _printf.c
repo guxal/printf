@@ -23,11 +23,13 @@ int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int byte = 0;
+	char c = '\0';
+	unsigned char *s = 0;
 
 	if (format == 0)
 		return (-1);
 	va_start(ptr, format);
-	byte = switched(ptr, format);
+	byte = switched(ptr, format, c, s);
 	va_end(ptr);
 	return (byte);
 }
