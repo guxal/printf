@@ -3,13 +3,16 @@
 /**
  * print_string - print string
  * @c: string char
+ * Return: byte
  */
-void print_string(unsigned char *c)
+int print_string(unsigned char *c)
 {
 	int i = 0;
 
 	while (c[i])
 	_putchar(c[i++]);
+
+	return (i);
 }
 /**
  * _printf - printf function
@@ -19,12 +22,12 @@ void print_string(unsigned char *c)
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int i = 0;
+	int i = 0, byte = 0;
 	char c;
-	unsigned char *t;
+	unsigned char *s;
 
 	if (format == 0)
-		return (0);
+		return (-1);
 	va_start(ptr, format);
 	while (format[i])
 	{
@@ -39,23 +42,23 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 				case 's':
-				t = va_arg(ptr, unsigned char *);
-				if (t)
-					print_string(t);
+				s = va_arg(ptr, unsigned char *);
+				if (s)
+					byte += print_string(s);
 				else
-					print_string((unsigned char *)"(null)");
+					byte += print_string((unsigned char *)"(null)");
+				byte--;
 				i++;
 				break;
 				default:
+					_putchar('%');
 				break;
 			}
 		}
 		else
 			_putchar(format[i]);
-
 		i++;
-	}
-
-	va_end(ptr);
-	return (i - 1);
+		byte++;
+	} va_end(ptr);
+	return (byte);
 }
