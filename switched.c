@@ -38,7 +38,7 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s)
 					i++;
 				break;
 				case '\0':
-					byte--;
+					byte = -2;
 				break;
 				default:
 					_putchar('%');
