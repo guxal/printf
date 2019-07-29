@@ -6,7 +6,7 @@
 *@format: the arguments list
 *Return: the byte number
 */
-int switched(va_list *ptr, const char *format)
+int switched(va_list ptr, const char *format)
 {
 	int i = 0, byte = 0;
 	char c;
@@ -36,6 +36,8 @@ int switched(va_list *ptr, const char *format)
 				i++;
 				break;
 				case '%':
+					_putchar('%');
+					i++;
 				break;
 				default:
 					_putchar('%');
