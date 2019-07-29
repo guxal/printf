@@ -36,6 +36,8 @@ int switched(va_list ptr, const char *format)
 				i++;
 				break;
 				case '%':
+					_putchar('%');
+					i++;
 				break;
 				default:
 					_putchar('%');
