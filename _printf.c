@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	if (format == 0)
 		return (-1);
 	va_start(ptr, format);
-	byte = switched(&ptr, format);
+	byte = switched(ptr, format);
 	va_end(ptr);
 	return (byte);
 }
