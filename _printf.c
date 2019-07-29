@@ -33,10 +33,11 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 				case 's':
-					print_string(va_arg(ptr, unsigned char *));
-					i++;
+				print_string(va_arg(ptr, unsigned char *));
+				i++;
 				break;
-				default;
+				default:
+				break;
 			}
 		}
 		else
@@ -48,5 +49,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ptr);
-	return (0);
+	return (i - 1);
 }
