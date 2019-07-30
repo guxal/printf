@@ -7,14 +7,13 @@
 */
 int print_number(int d, int con)
 {
-	unsigned int tmp, flag = 0;
+	unsigned int tmp;
 
 	if (d < 0)
 	{
 		con++;
 		_putchar('-');
 		tmp = d * -1;
-		flag = 1;
 	}
 	else
 	{
@@ -26,5 +25,5 @@ int print_number(int d, int con)
 	}
 	_putchar(tmp % 10 + '0');
 	con++;
-	return (con + flag);
+	return (con);
 }
