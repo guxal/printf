@@ -21,7 +21,7 @@ int print_number(int d)
 	}
 	if (d / 10)
 	{
-		con = print_number(tmp / 10);
+		con += print_number(tmp / 10);
 	}
 	_putchar(tmp % 10 + '0');
 	con++;
