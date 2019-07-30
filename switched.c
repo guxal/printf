@@ -38,16 +38,16 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s, int d)
 				case '\0':
 					byte = -2;
 				break;
-				case 'i':
-				case 'd':
-					d = va_arg(ptr, int), byte += print_number(d, byte), i++, byte--;
-					break;
+				case 'i': case 'd':
+				d = va_arg(ptr, unsigned int), byte += print_number(d, byte), i++, byte--;
+				if (d != 0)
+					byte += 1;
+				break;
 				default:
 					_putchar('%');
 				break;
 			}
-		}
-		else
+		} else
 			_putchar(format[i]);
 		i++, byte++;
 	} return (byte);
