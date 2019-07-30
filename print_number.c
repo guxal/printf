@@ -2,12 +2,12 @@
 /**
 *print_number - print number digit by digit
 *@d: the int given
-*@con: the bytes given
 *Return: character by character
 */
-int print_number(int d, int con)
+int print_number(int d)
 {
 	unsigned int tmp;
+	int con = 0;
 
 	if (d < 0)
 	{
@@ -21,7 +21,7 @@ int print_number(int d, int con)
 	}
 	if (d / 10)
 	{
-		con = print_number(tmp / 10, con);
+		con = print_number(tmp / 10);
 	}
 	_putchar(tmp % 10 + '0');
 	con++;

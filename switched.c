@@ -39,7 +39,7 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s, int d)
 					byte = -2;
 				break;
 				case 'i': case 'd':
-				d = va_arg(ptr, int), byte += print_number(d, byte), i++, byte--;
+				d = va_arg(ptr, int), byte += print_number(d), i++, byte--;
 				break;
 				default:
 					_putchar('%');
