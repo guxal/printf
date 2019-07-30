@@ -7,7 +7,7 @@
 */
 int print_number(int d, int con)
 {
-	int tmp;
+	unsigned int tmp;
 
 	if (d < 0)
 	{
