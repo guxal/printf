@@ -45,7 +45,8 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s, int d)
 					_putchar('%');
 				break;
 			}
-		} else
+		}
+		else
 			_putchar(format[i]);
 		i++, byte++;
 	} return (byte);
