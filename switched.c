@@ -6,9 +6,10 @@
 *@format: the arguments list
 *@c: char
 *@s: unsigned char
+*@d: takes the ints
 *Return: the byte number
 */
-int switched(va_list ptr, const char *format, char c, unsigned char *s)
+int switched(va_list ptr, const char *format, char c, unsigned char *s, int d)
 {
 	int i = 0, byte = 0;
 
@@ -21,9 +22,7 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s)
 			switch (format[i + 1])
 			{
 				case 'c':
-				c = va_arg(ptr, int);
-				_putchar(c);
-				i++;
+				c = va_arg(ptr, int), _putchar(c), i++;
 				break;
 				case 's':
 				s = va_arg(ptr, unsigned char *);
@@ -34,12 +33,15 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s)
 				byte--, i++;
 				break;
 				case '%':
-					_putchar('%');
-					i++;
+					_putchar('%'), i++;
 				break;
 				case '\0':
 					byte = -2;
 				break;
+				case 'i':
+				case 'd':
+					d = va_arg(ptr, int), byte += print_number(d, byte), i++, byte--;
+					break;
 				default:
 					_putchar('%');
 				break;
@@ -48,6 +50,5 @@ int switched(va_list ptr, const char *format, char c, unsigned char *s)
 		else
 			_putchar(format[i]);
 		i++, byte++;
-	}
-	return (byte);
+	} return (byte);
 }
