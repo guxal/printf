@@ -22,14 +22,14 @@ int print_string(unsigned char *c)
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int byte = 0;
+	int byte = 0, d = 0;
 	char c = '\0';
 	unsigned char *s = 0;
 
 	if (format == 0)
 		return (-1);
 	va_start(ptr, format);
-	byte = switched(ptr, format, c, s);
+	byte = switched(ptr, format, c, s, d);
 	va_end(ptr);
 	return (byte);
 }
