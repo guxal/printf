@@ -1,0 +1,39 @@
+.TH man 2 "30 Jul 2019" "0.01" "_printf man page"
+.SH NAME
+.B _printf, _putcharf(), simple output program, the only program you will ever need
+.SH SYNOPSIS
+#include <holberton.h>
+.br
+#include <stdarg.h>
+.br
+int _putchar(char);
+.br
+int _prinf(const char *format, ...);
+.br
+int switched(va_list ptr, const char *format, char c, unsigned char *s, int d);
+.br
+int print_string(unsigned char *c);
+.br
+int print_number(int d);
+.SH DESCRIPTION
+A function that produces output according and depending in the format given,this will be explained more in detailed below.In the simpliest case the function accepts a string of characters, each of which is printed exactly as it appears, so for example _printf("xzy"); would simply print an x,then a y, and finally and z. This copy is made in homenage of the classic printf who comes from vprintf
+.SH CONVERSION SPECIFIERS
+.B %c	print a single character (example _printf("%s", 'h'); this would print in the output h
+.br
+.B %s	print a string of characters.
+.br
+.B %%	print a percent sign.
+.br
+.B %i	print an integer base 10.
+.br
+.B %d	print a decimal base 10
+.SH EXAMPLES
+_printf("hello world %s", "hola mundo");
+.br
+_printf("print a big int %d", 2500000);
+.SH SEE ALSO
+.I printf(), vprintf(), putchar(), fprintf()
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Fidel Fernando Caicedo Castaño and Jonathan Cardenas Pabon
