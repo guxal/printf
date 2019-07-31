@@ -1,6 +1,5 @@
 # _printf
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -24,11 +23,12 @@ You need to have the header of this repository in the directory you are going to
   - (work in progress)
 # Conversion Specifiers
 In this section we will explain  what every current flag does and what it takes:
-    -%c: print a single character Ex: _printf("hello %c", 'H'); 
-    -%s: print a string of characters Ex: _printf("Hello %s", "World!"); 
-    -%d: print a decimal (base 10) number Ex: _printf("show me this %d", 1000); 
-    -%i: print an integer in base 10 Ex: _printf("show me this %i", 2500); 
-    -%%: print a percent sign Ex: _printf("%%"); 
+- %c: print a single character Ex: _printf("hello %c", 'H'); 
+- %s: print a string of characters Ex: _printf("Hello %s", "World!"); 
+- %d: print a decimal (base 10) number Ex: _printf("show me this %d", 1000); 
+- %i: print an integer in base 10 Ex: _printf("show me this %i", 2500); 
+- %%: print a percent sign Ex: _printf("%%"); 
+
 
 # Header File
 ```C
