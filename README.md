@@ -62,4 +62,4 @@ in development:
 **Free Software, Hell Yeah!**
 This software is open source, so anybody except Richard Dennis can Use it.
 # Authors
-Fidel Fernando Caicedo Castaño and Jonathan Cardenas Tobon.
+Fidel Fernando Caicedo Castaño and Jonathan Cardenas.
